@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Processamento inteligente de texto livre — Uma jornada sobre ganho de escala</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=5316bd241e" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/amp/" />
+    
+    <meta property="og:site_name" content="Datenworks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Processamento inteligente de texto livre — Uma jornada sobre ganho de escala" />
+    <meta property="og:description" content="
+
+Uma das proposições de valor da tecnologia Big Data é a capacidade de resolver
+problemas complexos do cotidiano que, em geral, exigiriam esforços tremendos
+(pessoas, processos, tecnologia) para proporcionar alguma chance de sucesso. Em
+vários cenários de negócio, seja na criação fabril de produtos ou execução de
+serviços, o ganho de escala operacional traz desafios importantes para
+determinar a capacidade de uma empresa em crescer (ou não) de forma sustentável
+no longo prazo. Se o custo de pro" />
+    <meta property="og:url" content="https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/" />
+    <meta property="og:image" content="https://datenworks.github.io/content/images/2019/08/0-tFkmLAeZZFqPthiF.jpg" />
+    <meta property="article:published_time" content="2019-02-12T19:10:00.000Z" />
+    <meta property="article:modified_time" content="2019-08-19T19:41:16.000Z" />
+    <meta property="article:publisher" content="https://www.facebook.com/datenworks" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Processamento inteligente de texto livre — Uma jornada sobre ganho de escala" />
+    <meta name="twitter:description" content="
+
+Uma das proposições de valor da tecnologia Big Data é a capacidade de resolver
+problemas complexos do cotidiano que, em geral, exigiriam esforços tremendos
+(pessoas, processos, tecnologia) para proporcionar alguma chance de sucesso. Em
+vários cenários de negócio, seja na criação fabril de produtos ou execução de
+serviços, o ganho de escala operacional traz desafios importantes para
+determinar a capacidade de uma empresa em crescer (ou não) de forma sustentável
+no longo prazo. Se o custo de pro" />
+    <meta name="twitter:url" content="https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/" />
+    <meta name="twitter:image" content="https://datenworks.github.io/content/images/2019/08/0-tFkmLAeZZFqPthiF.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Alexandre Cardoso" />
+    <meta name="twitter:site" content="@datenworks" />
+    <meta property="og:image:width" content="700" />
+    <meta property="og:image:height" content="467" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Datenworks",
+        "logo": "https://datenworks.github.io/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Alexandre Cardoso",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://datenworks.github.io/content/images/2019/08/1-rmfkn7m_MPvqJEjuEZGshA.jpeg",
+            "width": 128,
+            "height": 127
+        },
+        "url": "https://datenworks.github.io/author/alexcard/",
+        "sameAs": []
+    },
+    "headline": "Processamento inteligente de texto livre — Uma jornada sobre ganho de escala",
+    "url": "https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/",
+    "datePublished": "2019-02-12T19:10:00.000Z",
+    "dateModified": "2019-08-19T19:41:16.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://datenworks.github.io/content/images/2019/08/0-tFkmLAeZZFqPthiF.jpg",
+        "width": 700,
+        "height": 467
+    },
+    "description": "\n\nUma das proposições de valor da tecnologia Big Data é a capacidade de resolver\nproblemas complexos do cotidiano que, em geral, exigiriam esforços tremendos\n(pessoas, processos, tecnologia) para proporcionar alguma chance de sucesso. Em\nvários cenários de negócio, seja na criação fabril de produtos ou execução de\nserviços, o ganho de escala operacional traz desafios importantes para\ndeterminar a capacidade de uma empresa em crescer (ou não) de forma sustentável\nno longo prazo. Se o custo de pro",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://datenworks.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.28" />
+    <link rel="alternate" type="application/rss+xml" title="Datenworks" href="https://datenworks.github.io/rss/" />
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="https://datenworks.github.io"><img src="/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png" alt="Datenworks" /></a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="https://datenworks.github.io/">Home</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/datenworks" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/datenworks" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://datenworks.github.io/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2019-02-12">12 Fevereiro 2019</time>
+                </section>
+                <h1 class="post-full-title">Processamento inteligente de texto livre — Uma jornada sobre ganho de escala</h1>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="/content/images/size/w300/2019/08/0-tFkmLAeZZFqPthiF.jpg 300w,
+                            /content/images/size/w600/2019/08/0-tFkmLAeZZFqPthiF.jpg 600w,
+                            /content/images/size/w1000/2019/08/0-tFkmLAeZZFqPthiF.jpg 1000w,
+                            /content/images/size/w2000/2019/08/0-tFkmLAeZZFqPthiF.jpg 2000w"
+                    sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px"
+                    src="/content/images/size/w2000/2019/08/0-tFkmLAeZZFqPthiF.jpg"
+                    alt="Processamento inteligente de texto livre — Uma jornada sobre ganho de escala"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p></p><p>Uma das proposições de valor da tecnologia Big Data é a capacidade de resolver problemas complexos do cotidiano que, em geral, exigiriam esforços tremendos (pessoas, processos, tecnologia) para proporcionar alguma chance de sucesso. Em vários cenários de negócio, seja na criação fabril de produtos ou execução de serviços, o ganho de escala operacional traz desafios importantes para determinar a capacidade de uma empresa em crescer (ou não) de forma sustentável no longo prazo. Se o custo de produção/operação acelera além do crescimento de receita, certamente há problemas de escala.</p><p>A partir deste <em>post</em>, contaremos a jornada de transformação digital de um dos clientes <a href="https://www.datenworks.com/"><strong>Datenworks</strong></a> e como este cliente, através de Big Data e uso adequado de engenharia de software e automação de processos, reinventou a sua forma de operar, gerar valor para o seu mercado e escalar seu próprio negócio.</p><h1 id="qual-o-problema">Qual o problema?</h1><p>Imagine que você lidera uma empresa, com mais de 20 anos de mercado, que presta serviços na área de <a href="https://pt.wikipedia.org/wiki/Clipping"><strong><em>clipping</em></strong></a><em> </em>👇 para mais de 1000 clientes (empresas/pessoas físicas) em todo o Brasil.</p><blockquote><strong><em>Clipping</em></strong> é uma expressão idiomática da língua inglesa, uma “gíria”, que define o processo de selecionar notícias em jornais, revistas, sites e outros meios de comunicação, geralmente impressos, para resultar num apanhado de recortes sobre assuntos de total interesse de quem os coleciona.</blockquote><p>Sua oferta de <em>clipping</em> envolve capturar, estruturar e apresentar ao seu cliente, no tempo máximo contratado, todo o nível de exposição da imagem do cliente (pessoa/empresa) e temas de interesse do mesmo em todas as mídias contratadas. Por “mídia”, há de tudo. Jornais (digitais e impressos), revistas, <em>web sites</em>, TV, rádio, etc. De todas as mídias capturadas, uma das mais importantes é conhecida como <a href="https://pt.wikipedia.org/wiki/M%C3%ADdia_impressa">mídia impressa</a>, que reúne jornais e revistas (digitais e impressos) de todo o país, abrangendo grandes centros e até mesmo pontos mais remotos.</p><p>Agora considere o seguinte cenário:</p><ul><li>Pauta diária de leitura de impressos compreende, em média, 300 jornais distintos. 😮</li><li>Jornais distribuídos por todo o Brasil.</li><li>Operação integral, 365 dias por ano.</li><li>Leitura totalmente manual, realizada por <strong>dezenas de pessoas 😲</strong></li><li>Os principais jornais do país precisam ser “lidos” (com muita atenção) e entregues para <em>clipping</em> (recorte e envio ao cliente) até às 07:00, <strong>todos os dias</strong>. 😰</li></ul><!--kg-card-begin: html--><iframe src="https://giphy.com/embed/8dYmJ6Buo3lYY" width="480" height="352" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/baby-story-reading-8dYmJ6Buo3lYY"></a></p><!--kg-card-end: html--><p>Considerando que sua empresa já realiza esta atividade com alto nível de qualidade mas, ao mesmo tempo, com alto custo operacional (funcionários, espaço físico, etc.), como lidar com o crescimento potencial do seu negócio diante dos claros desafios de escala?</p><p>A leitura de impressos, dentre vários aspectos, é uma das operações mais complexas da rotina de <em>clipping</em>. Apenas citando alguns:</p><ul><li>Janela de leitura prioritária — 18 jornais de grande circulação (em média, 800 páginas) lidos até 07:00.</li><li>Em alguns jornais, há mais de uma pessoa realizando a leitura.</li><li>Um dos principais jornais leva <strong>mais de 1h para ser lido por 2 (duas) pessoas</strong>.</li><li>Pessoas falham (e também faltam ao serviço, eventualmente).</li><li>Hora-extra aos fins de semana.</li><li>Não basta “apenas ler”. É preciso identificar e apontar os termos de interesse de centenas de clientes interessados no conteúdo impresso.</li></ul><p>Neste processo, a única forma de ganhar escala de produção é, simplesmente, <strong>contratar mais leitores</strong>, que precisam ser treinados, escalados em times e acompanhados por gestores, estações de trabalho e planejamento de logística para deslocamento até o escritório da empresa, onde todos estão para o turno de produção.</p><p>Muita coisa que pode dar errado, não? 👎</p><p>O ponto central da questão envolve <strong>ganho de escala na leitura de impressos. </strong>Para obter ganho de escala, é preciso isolar da interferência (e dependência) humana as tarefas de alta repetição, sensíveis a erro e que causam degradação e perda de qualidade do processo como um todo, quando falhas ocorrem.</p><h1 id="solu-o-proposta">Solução proposta</h1><p>Há muitos anos, a indústria de tecnologia já pesquisa abordagens com uso de computadores para automação de processos do cotidiano de pessoas, como a leitura de texto em linguagem natural (inglês, português, etc.)</p><p>Para o desafio em <em>clipping</em>, a solução passaria por automatizar a leitura a partir de técnicas de <a href="https://en.wikipedia.org/wiki/Optical_character_recognition">OCR</a> (<em>Optical Character Recognition</em>). Há diversas soluções OCR no mercado (comerciais e <em>open-source</em>,<em> cloud</em> e <em>on-premises</em>), mas apenas “ler” não seria o bastante. Como identificar o conteúdo relevante para o cliente final? Diante de um volume gigantesco de informação (300 jornais por dia, lembra?), como fazê-lo no menor tempo possível, sem comprometer a qualidade já alcançada na abordagem manual?</p><p>A solução desenvolvida sob medida pela <a href="https://www.datenworks.com/"><strong>Datenworks</strong></a>, após estudo e definição clara dos objetivos de negócio, envolveu a construção de um serviço automatizado de leitura de impressos, utilizando tecnologias <em>open-source</em> e <em>cloud computing</em> com foco na máxima eficiência do processo e menor <a href="https://en.wikipedia.org/wiki/Total_cost_of_ownership">TCO</a> possível.</p><p>Em linhas gerais o processo de leitura, agora automatizado, é composto de etapas simples de operação porém bastante ágil em entrega de resultados 👇</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="https://datenworks.github.io/content/images/2019/08/1-18qJbpiVpCohkynMA40JOg.png" class="kg-image"></figure><!--kg-card-end: image--><p>Ao final do processo, os resultados da leitura automatizada são entregues ao leitor de forma que ele apenas faça uma simples revisão, em tempo muito menor do que a leitura manual.</p><h2 id="-mas-o-que-o-leitor-recebe-como-resultado-">“<strong>Mas o que o leitor recebe como resultado?</strong>”</h2><p>A partir de cada página de jornal submetida para processamento, na etapa “Busca de termos”, é realizado o cruzamento de todos o conteúdo de interesse (palavras, frases, filtros, etc) com os termos verificados em cada página, para isolar o conteúdo de interesse de cada cliente e também para destacar o resultado de maneira visual. Dessa forma, uma página “grifada” é entregue assim 👇</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1--NA9zbg1XYvBx5lqeQ9eEA.jpeg" class="kg-image"><figcaption>Termos de interesse capturados e destacados em padrão de cores</figcaption></figure><!--kg-card-end: image--><p>A partir do processamento dos metadados de cada página, também é possível destacar termos “hifenizados” no texto, o que aumenta a qualidade da busca e resultado 👇</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1-talDk5jExM9i_lhYPnPfgQ.jpeg" class="kg-image"><figcaption>Palavra hifenizada capturada em destaque</figcaption></figure><!--kg-card-end: image--><h2 id="-nossa-muito-legal-mas-como-isso-funciona-">“<strong>Nossa, muito legal! Mas, como isso funciona?</strong>”</h2><p>A arquitetura técnica desta solução utiliza tecnologia <em>open-source</em> e faz uso eficiente de <em>cloud computing, </em>baseado em <a href="https://aws.amazon.com">Amazon Web Services</a>, com foco em <em>high </em><a href="https://en.wikipedia.org/wiki/Throughput"><em>throughput</em></a> e operação de baixo custo, abordando conceitos como <a href="https://www.techradar.com/news/what-is-container-technology"><em>containers</em></a>, <a href="https://en.wikipedia.org/wiki/Serverless_computing"><em>serverless</em></a><em> </em>e <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html"><em>spot fleet</em></a><em> </em>👇</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1-JChPw4iNJbgN0vHDkrTx7w.png" class="kg-image"><figcaption>Arquitetura técnica 👍</figcaption></figure><!--kg-card-end: image--><p>Nesta arquitetura, o uso de <em>Docker containers</em>,<em> AWS Lambda, AWS S3 e AWS API Gateway </em>é bastante explorado como elementos de processamento <em>serverless</em> para o <em>pipeline</em> de leitura de impressos. Para processamento OCR de todos os impressos recebidos, um <em>ECS cluster </em>em <em>spot fleet</em>, utilizando <em>task queueing</em> desenvolvido em Python + ferramentas <em>open-source. </em>Para armazenamento de documentos processados (texto, termos, metadados, etc.) e suporte à busca contextual, um <a href="https://www.elastic.co/products/elasticsearch"><em>ElasticSearch</em></a><em> cluster</em> em alta disponibilidade com políticas de <em>backup</em> automatizadas. Para gestão de configuração e armazenamento de métricas de processo (páginas/palavras verificadas, backlog, etc.), uma instância <a href="https://aws.amazon.com/rds/postgresql/"><em>RDS for Postgresql</em></a> em modo <a href="https://en.wikipedia.org/wiki/High_availability">HA</a>. Para sincronização e entrega dos dados processados (imagens, metadados), <a href="https://aws.amazon.com/api-gateway/"><em>API Gateway</em></a><em> + </em><a href="https://aws.amazon.com/lambda/"><em>Lambda</em></a>.</p><p>Para monitoramento ostensivo, um <em>dashboard</em> baseado em <a href="https://grafana.com/grafana">Grafana</a> para acompanhamento das métricas de processamento em tempo real 👇</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1-5m2jZHyZxuknPF7Y_3cq_Q.png" class="kg-image"><figcaption>Métricas de processamento 📈</figcaption></figure><!--kg-card-end: image--><h2 id="-ok-bem-bonito-mas-o-que-a-empresa-ganhou-com-tudo-isso-">“Ok, bem bonito mas, o que a empresa ganhou com tudo isso?”</h2><ul><li>Liberação do <em>clipping</em> para os clientes finais, em média, 60% mais rápido.</li><li>Maior quantidade de jornais lidos e revisados.</li><li>Revisão mais ágil e manutenção de alta qualidade de captura de termos.</li><li>Redução de jornada (horas-extras) para produção maior.</li><li>Processo de captura e revisão distribuída (operadores e leitores em <em>home office</em>)</li></ul><p>Além dos benefícios ao negócio, alguns números sobre eficiência operacional:</p><ul><li>~ 4500 páginas processadas por dia</li><li>~ 300 jornais diários</li><li>Mais de 5GB de dados processados por dia</li><li>Jornal de grande circulação (aquele lido em 1h por duas pessoas) processado e entregue, em média, em 4 minutos</li><li>A operação da plataforma <em>cloud </em>tem custo médio mensal em 40% do rendimento bruto de um único colaborador (leitor)</li></ul><!--kg-card-begin: hr--><hr><!--kg-card-end: hr--><p>Como parte de uma série sobre esta jornada, a partir deste, novos <em>posts</em> serão divulgados para detalhar as abordagens técnicas aplicadas nesta solução.</p><p>Até mais!</p>
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-rmfkn7m_MPvqJEjuEZGshA.jpeg" alt="Alexandre Cardoso" />
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="/author/alexcard/">Alexandre Cardoso</a></h4>
+            <p>Read <a href="/author/alexcard/">more posts</a> by this author.</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="/author/alexcard/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="/lean-infra-enxuta/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 300w,
+                    /content/images/size/w600/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 600w,
+                    /content/images/size/w1000/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 1000w,
+                    /content/images/size/w2000/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/content/images/size/w600/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg"
+            alt="LEAN: Desenvolvimento de infra enxuta"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/lean-infra-enxuta/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">LEAN: Desenvolvimento de infra enxuta</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>Dentro da engenharia de sistemas, é muito complicado fazer o planejamento do desenvolvimento de um produto, pois muitas vezes o desenvolvimento de software é muito mais arte do que ciência, e os projetos</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Matheus Cunha
+                    </div>
+
+                        <a href="/author/macunha/" class="static-avatar">
+                            <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg" alt="Matheus Cunha" />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">7 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+
+                <article class="post-card post featured ">
+
+    <a class="post-card-image-link" href="/devops-origins/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2019/08/DatenworksDevOps-2.png 300w,
+                    /content/images/size/w600/2019/08/DatenworksDevOps-2.png 600w,
+                    /content/images/size/w1000/2019/08/DatenworksDevOps-2.png 1000w,
+                    /content/images/size/w2000/2019/08/DatenworksDevOps-2.png 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/content/images/size/w600/2019/08/DatenworksDevOps-2.png"
+            alt="DevOps: De onde vieram e para onde vão"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/devops-origins/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">DevOps: De onde vieram e para onde vão</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>First of all, it’s all about Agile!A metodologia DevOps foi criada utilizando os conceitos dos métodos Ágeis, para entregar um grande valor durante o processo de desenvolvimento de software, automatizando o</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Matheus Cunha
+                    </div>
+
+                        <a href="/author/macunha/" class="static-avatar">
+                            <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg" alt="Matheus Cunha" />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">10 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://datenworks.github.io">
+                <img src="/content/images/size/w30/2019/08/favicon.ico" alt="Datenworks icon" />
+            <span>Datenworks</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Processamento inteligente de texto livre — Uma jornada sobre ganho de escala</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Processamento%20inteligente%20de%20texto%20livre%20%E2%80%94%20Uma%20jornada%20sobre%20ganho%20de%20escala&amp;url=https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://datenworks.github.io/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://datenworks.github.io">Datenworks</a> &copy; 2019</section>
+                <nav class="site-footer-nav">
+                    <a href="https://datenworks.github.io">Latest Posts</a>
+                    <a href="https://www.facebook.com/datenworks" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/datenworks" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/built/jquery.fitvids.js?v=5316bd241e"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    
+
+</body>
+</html>

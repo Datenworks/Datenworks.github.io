@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>DevOps: De onde vieram e para onde vão</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=5316bd241e" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://datenworks.github.io/devops-origins/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://datenworks.github.io/devops-origins/amp/" />
+    
+    <meta property="og:site_name" content="Datenworks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="DevOps: De onde vieram e para onde vão" />
+    <meta property="og:description" content="First of all, it’s all about Agile!
+A metodologia DevOps foi criada utilizando os conceitos dos métodos Ágeis, para
+entregar um grande valor durante o processo de desenvolvimento de software,
+automatizando o release de features compipelines, para conseguir provar
+hipóteses mais rápido e assim se adaptar mais rápido às mudanças por meio de uma
+abordagem “fail-fast”. Essas mudanças são mais culturais do que técnicas,
+portanto é comum dizer que DevOps é cultura.
+
+A implementação de DevOps acontece " />
+    <meta property="og:url" content="https://datenworks.github.io/devops-origins/" />
+    <meta property="og:image" content="https://datenworks.github.io/content/images/2019/08/DatenworksDevOps-2.png" />
+    <meta property="article:published_time" content="2019-01-11T17:35:00.000Z" />
+    <meta property="article:modified_time" content="2019-08-19T19:04:11.000Z" />
+    <meta property="article:publisher" content="https://www.facebook.com/datenworks" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DevOps: De onde vieram e para onde vão" />
+    <meta name="twitter:description" content="First of all, it’s all about Agile!
+A metodologia DevOps foi criada utilizando os conceitos dos métodos Ágeis, para
+entregar um grande valor durante o processo de desenvolvimento de software,
+automatizando o release de features compipelines, para conseguir provar
+hipóteses mais rápido e assim se adaptar mais rápido às mudanças por meio de uma
+abordagem “fail-fast”. Essas mudanças são mais culturais do que técnicas,
+portanto é comum dizer que DevOps é cultura.
+
+A implementação de DevOps acontece " />
+    <meta name="twitter:url" content="https://datenworks.github.io/devops-origins/" />
+    <meta name="twitter:image" content="https://datenworks.github.io/content/images/2019/08/DatenworksDevOps-2.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Matheus Cunha" />
+    <meta name="twitter:site" content="@datenworks" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="823" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Datenworks",
+        "logo": "https://datenworks.github.io/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Cunha",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://datenworks.github.io/content/images/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg",
+            "width": 128,
+            "height": 128
+        },
+        "url": "https://datenworks.github.io/author/macunha/",
+        "sameAs": [
+            "https://macunha.me"
+        ]
+    },
+    "headline": "DevOps: De onde vieram e para onde vão",
+    "url": "https://datenworks.github.io/devops-origins/",
+    "datePublished": "2019-01-11T17:35:00.000Z",
+    "dateModified": "2019-08-19T19:04:11.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://datenworks.github.io/content/images/2019/08/DatenworksDevOps-2.png",
+        "width": 1600,
+        "height": 823
+    },
+    "description": "First of all, it’s all about Agile!\nA metodologia DevOps foi criada utilizando os conceitos dos métodos Ágeis, para\nentregar um grande valor durante o processo de desenvolvimento de software,\nautomatizando o release de features compipelines, para conseguir provar\nhipóteses mais rápido e assim se adaptar mais rápido às mudanças por meio de uma\nabordagem “fail-fast”. Essas mudanças são mais culturais do que técnicas,\nportanto é comum dizer que DevOps é cultura.\n\nA implementação de DevOps acontece ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://datenworks.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.28" />
+    <link rel="alternate" type="application/rss+xml" title="Datenworks" href="https://datenworks.github.io/rss/" />
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="https://datenworks.github.io"><img src="/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png" alt="Datenworks" /></a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="https://datenworks.github.io/">Home</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/datenworks" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/datenworks" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://datenworks.github.io/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post featured ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2019-01-11">11 Janeiro 2019</time>
+                </section>
+                <h1 class="post-full-title">DevOps: De onde vieram e para onde vão</h1>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="/content/images/size/w300/2019/08/DatenworksDevOps-2.png 300w,
+                            /content/images/size/w600/2019/08/DatenworksDevOps-2.png 600w,
+                            /content/images/size/w1000/2019/08/DatenworksDevOps-2.png 1000w,
+                            /content/images/size/w2000/2019/08/DatenworksDevOps-2.png 2000w"
+                    sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px"
+                    src="/content/images/size/w2000/2019/08/DatenworksDevOps-2.png"
+                    alt="DevOps: De onde vieram e para onde vão"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <h3 id="first-of-all-it-s-all-about-agile-"><em>First of all, it’s all about Agile!</em></h3><p>A metodologia DevOps foi criada utilizando os conceitos dos métodos Ágeis, para entregar um grande valor durante o processo de desenvolvimento de software, automatizando o release de features compipelines, para conseguir provar hipóteses mais rápido e assim se adaptar mais rápido às mudanças por meio de uma abordagem “fail-fast”. Essas mudanças são mais culturais do que técnicas, portanto é comum dizer que DevOps é cultura.</p><p>A implementação de DevOps acontece por meio da automação de processos, tendo muito forte dentro dessa implementação a reengenharia de processos da empresa. A implementação da parte técnica é simples e fácil se comparada com a mudança de comportamento das pessoas. Portanto, é bastante confuso o papel que um “Engenheiro/Analista DevOps” desempenharia, no meio dessa confusão, existem muitos SysAdmins e Analistas de Infra assumindo o papel de “DevOps”.</p><h1 id="first-things-first-lean-a-base-do-agile">First things first, Lean é a base do Agile</h1><p>A realidade não é tão feliz quanto parece. Depois da segunda guerra mundial, o Japão estava destruído e com poucos recursos, após ter perdido a guerra. Com uma quantia limitada de recursos, o país precisou se reinventar e sobreviver após uma época de forte depressão, durante essa época dois caras ficaram famosos pelo trabalho realizado dentro de uma empresa, que mais tarde teve o nome dedicado ao modelo que foi criado.</p><p>Esses caras eram Eiji Toyoda e Taiichi Ohno, que trabalhavam para a Toyota Motor Corporation. Foram os fundadores do modelo de produção Toyota, também conhecido como Toyotismo.</p><h1 id="toyota-deu-origem-ao-lean">Toyota deu origem ao Lean</h1><p>Lean é uma metodologia que ensina a otimizar os processos da empresa; end-to-end, para dar mais atenção às tarefas que <strong>entregam valor</strong> ao consumidor final, incentivando ao máximo a remoção de bottlenecks no processo, assim como a análise de tarefas que são desperdício (definidas pelos 3M) para que sejam identificadas e removidas.</p><p>Essas tarefas consideradas desperdício são classificadas como 3M dentro do Lean que representam: <em>Muda, Mura, </em>e<em> Muri.</em> Outro ponto importante a destacar no processo é a utilização do método nomeado Kaizen (continuous improvement), com foco em melhorar continuamente buscando atingir um nível de excelência em qualidade.</p><p>A qualidade faz parte da cultura japonesa, pois existe a crença de que um produto de qualidade traz o cliente de volta, mesmo que os produtos demorem mais para estragar, os clientes serão fiéis a eles, pois terão uma boa experiência. Antes mesmo de falarmos sobre user experience, eles já estavam pensando nisso.</p><h1 id="kaizen">Kaizen</h1><p>Um mindset que ajuda a olhar para cada parte do processo exclusivamente e pensar nas melhorias, envolvendo as pessoas que fazem parte do processo, assim incentiva que haja a inclusão dessas pessoas nas decisões de mudança, já que:</p><ul><li>Fica muito mais fácil de aceitar uma mudança quando ela não é imposta (top-down);</li><li>Há uma absorção maior das mudanças pelas pessoas, quando elas são incluídas no processo;</li><li>As pessoas que são incluídas no processo trazem as suas preocupações e sugestões, que contribuem positivamente com a evolução da mudança, tornando a ideia mais robusta.</li></ul><p>O processo de definição das melhorias por meio de Kaizen acontece (normalmente) na seguinte ordem:</p><ol><li>Definir objetivos com base em dados;</li><li>Revisar o estado atual e desenvolver um plano de melhoria;</li><li>Implementar a melhoria;</li><li>Revisar a implementação e corrigir o que não funciona;</li><li>Reportar os resultados e determinar os itens a serem monitorados.</li></ol><p>Esse processo é bastante chamado de <strong>PDCA:</strong> Plain-Do-Control-Act, que se resume em:</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1-N8KelcHbixESci5Y0JQoYA.png" class="kg-image"><figcaption>Plan-Do-Check-Act circulo</figcaption></figure><!--kg-card-end: image--><ul><li>Plan (desenvolver a hipótese);</li><li>Do (executar um experimento);</li><li>Check (validar os resultados);</li><li>Act (refinar o experimento e recomeçar).</li></ul><h1 id="3m-muda-mura-muri">3M: Muda, Mura, Muri</h1><h1 id="muda-desperd-cio-">Muda (desperdício)</h1><p>Qualquer atividade que consuma tempo sem agregar valor ao consumidor final. Como por exemplo:</p><ul><li>produção em excesso;</li><li>tempo parado (ocioso) no processo;</li><li>defeito nos produtos.</li></ul><p>É importante lembrar que existem níveis diferentes de Muda que podem ser ou não removidos com rapidez, e a classificação depende do tempo para remoção.</p><p>Um exemplo de Muda mais demorado é a descontinuação de um software legado que acaba tendo ciclos mais longos de release, causando tempo ocioso nos times, muitas vezes uma rotina de testes longa e manual.</p><h1 id="mura-desigualdade-">Mura (desigualdade)</h1><p>Atividades que são muito variáveis e imprevisíveis, gerando resultados diferentes em todas as execuções. Por exemplo: a execução de tarefas que não foram bem planejadas e acabam chegando com prazos rígidos. São executadas na correria, gerando um desgaste, desespero, e ainda por cima, ao terminar deixam as pessoas que executaram essas tarefas esperando (seja um feedback, ou então a confirmação de que está finalizado).</p><h1 id="muri-sobrecarga-">Muri (sobrecarga)</h1><p>Exigir que as pessoas (ou os equipamentos) trabalhem além do limite, para atingir algum tipo de meta ou expectativa, gerando cansaço e consequentemente falhas durante o processo. Essas falhas são geralmente erros humanos causados pelo cansaço durante o trabalho excessivo.</p><h1 id="voltando-ao-agile-">Voltando ao Agile…</h1><p>No ano 2000 um grupo de 17 pessoas se encontrou em um resort em Oregon para conversar sobre ideias que poderiam melhorar o fluxo de desenvolvimento de software. Depois de um ano de amadurecimento das ideias, essas pessoas se encontraram de novo e publicaram as ideias, que hoje conhecemos como: Agile Manifesto.</p><p>Os principais pontos são:</p><ul><li>Individuals and interactions over processes and tools</li><li>Working software over comprehensive documentation</li><li>Customer collaboration over contract negotiation</li><li>Responding to change over following a plan</li></ul><p>Vou me restringuir a explicação desses pontos com o ponto de vista DevOps, para não fugir (mais) do tema.</p><h1 id="individuals-and-interactions">Individuals and interactions</h1><p><em>over processes and tools</em></p><p>As pessoas devem receber o kit de ferramentas (tooling) apropriado para trabalhar e então serem empoderados para realizar seu trabalho. As interações entre pessoas é extremamente incentivada, para o compartilhamento de conhecimento e também para facilitar o fluxo criativo dentro dos times de desenvolvimento.</p><p>Um excelente exemplo de interação incentivada por meio de DevOps é o hábito de code review. Considerando que pequenas partes do software serão iteradas e aprovadas no pipeline passando por diferentes ambientes, de maneira automática, o melhor jeito de prevenir defeitos é por meio de code review.</p><p>Esse hábito traz benefício como:</p><ul><li>Compartilhamento de conhecimento no time;</li><li>Observação do problema em diferentes pontos de vista;</li><li>Engajamento no time;</li><li>Redução no número de bugs.</li></ul><h1 id="working-software">Working software</h1><p>over comprehensiv<em>e documentation</em></p><p>Aqui existe um trick na questão do working software, um software que funciona não é “compilou, tá funcionando”. O software que funciona é o que atende aos requisitos do usuário; i.e. o software que resolve o problema e as dores do usuário.</p><p>Como o mercado é muito dinâmico, e evolui com grande velocidade, muitas vezes durante o projeto de desenvolvimento de software os requisitos mudam devido a fatores externos. Portanto, sabendo que não é possível prever todos os fatores, muitas gambiarras são feitas no meio do caminho e documentadas, para que o usuário final aprenda a lidar com as falhas, e executar os workarounds, gastando mais esforço do que seria necessário para realizar as tarefas por meio do software.</p><p>Entregar frequentemente software funcionando, de poucas semanas a poucos meses, com preferência à menor escala de tempo</p><p>Incentivando assim que hajam deployments tanto quanto o possível, para que as falhas aconteçam o mais cedo possível, permitindo assim que o impacto delas seja bem menor.</p><h1 id="fail-fast-"><em>Fail-fast!</em></h1><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1-V5JFhp3tTl4WqaJ-kGgvCg.png" class="kg-image"><figcaption>Gráfico: custo relativo para corrigir defeitos</figcaption></figure><!--kg-card-end: image--><p>As falhas são compreendidas e incentivadas, pois faz parte do mindset entender que:</p><ul><li>Só erra quem faz;</li><li>Falhas acontecem.</li></ul><p>Portanto é melhor que as falhas ocorram cedo, enquanto o custo de correção ainda é baixo. Falhar em um ambiente controlado de testes, permite que a correção seja muito mais rápida (e barata) do que seria caso a correção acontecesse já em produção.</p><p>Para que essa abordagem tenha sucesso, existe a premissa de que os ambientes sejam cópias de produção, ou pelo menos que seja o mais próximo possível. Do contrário, haverão mudanças de comportamento no software entre os ambientes, inviabilizando o ambiente de testes.</p><p>Caso os ambientes sejam divergentes, a promoção de bugs para produção será muito frequente, causando falhas tarde, que são falhas caras.</p><h1 id="customer-collaboration">Customer collaboration</h1><p><em>over contract negotiation</em></p><p>Também é possível que haja um má levantamento de requisitos durante o início do projeto, pois muitas vezes o próprio cliente/usuário não conseguiu prever todas as funcionalidades necessárias.</p><p>Podemos descrever essa situação como:</p><ul><li>Do ponto A é possível ver apenas o ponto B;</li><li>Do ponto B é possível ver o ponto C;</li></ul><p>Portanto há um grande incentivo para que o software seja entregue em partes, continuamente. Colhendo assim os feedbacks do usuário sobre os próximos passos, seguindo os conceitos de prototipação evolutiva, que foram muito divulgados por meio do livro <em>The Lean Startup</em>.</p><p>Esse ponto faz muito contraste com o anterior, em relação à entrega contínua (continuous release), para que seja possível apresentar o protótipo e evoluir ele ao longo do projeto.</p><p><em>Saiba quem é o seu cliente/consumidor/usuário</em>, e para quem você está fazendo o software, pois esse é o único jeito de conseguir entregar valor para esse cliente. Parte importante do processo de desenvolvimento de software é ser empático com os problemas do usuário, e entender de verdade qual é o problema a ser resolvido, e o resultado causado pelo impacto no desenvolvimento do software (geração do valor para o usuário).</p><h1 id="responding-to-change">Responding to change</h1><p><em>over following a plan</em></p><p>Fazer um redesign dos requisitos durante o projeto é parte crucial para o sucesso do projeto. Será o único jeito de conseguir trazer para a mesa todos os problemas do usuário, e criar a melhor solução para todos esses problemas, pois só o usuário sabe dos reais problemas que ele enfrenta no dia-a-dia lidando com o software.</p><p>Com a entrega contínua de software junto com o monitoramento dos resultados, o processo de coleta dos feedbacks fica muito mais simples e rápido.</p><h1 id="devops-devops-devops">DevOps, DevOps, DevOps</h1><p>Com a divulgação da <em>palavra DevOps</em>, existe muita gente falando sobre DevOps por aí. Existindo muita divergência no que é falado, e criando uma confusão grande sobre o tema. Acaba sendo muito comum se deparar com diferentes interpretações sobre <strong>o que é DevOps</strong>. Existe muito eufemismo na área, e gourmetização em cima do LinkedIn, com muitos SysAdmins por aí se dizendo DevOps, pois aprenderam a codar shell script dentro do Python.</p><h1 id="os-benef-cios-da-implementa-o-de-devops">Os benefícios da implementação de DevOps</h1><p>Principais benefícios que uma companhia geralmente espera e encontra na adoção da cultura:</p><h1 id="releases-mais-r-pidos-e-baratos">Releases mais rápidos e baratos</h1><p>Como os releases serão frequentes, as entregas acabam sendo pequenas. Entregas pequenas trazem o benefício de aumentar a velocidade no ciclo de desenvolvimento (entregando sempre)</p><h1 id="suporte-operacional-melhorado-com-ajustes-r-pidos">Suporte operacional melhorado com ajustes rápidos</h1><p>Caso haja alguma falha durante a entrega, o impacto é menor pois a quantidade de modificações é pequena, assim como o rollback é rápido.</p><h1 id="melhor-time-to-market-ttm-">Melhor time to market (TTM)</h1><p>O software será entregue muito mais cedo, quando ainda for um MVP. Os clientes serão integrados como parte do processo de desenvolvimento, trazendo insights e feedbacks para o time. Permitindo assim que haja uma velocidade maior de lançamento no mercado.</p><h1 id="produtos-de-qualidade-superior">Produtos de qualidade superior</h1><p>Como foi falado antes, falhar cedo impede que defeitos sejam entregues em produção</p><p>Assim como:</p><ul><li>Menor volume de defeitos no produto como um todo;</li><li>Aumento na frequência de novas features e releases;</li><li>Processos de desenvolvimento apropriados nos times, incluindo automação.</li></ul><h1 id="agora-que-entendemos-o-por-que-vamos-ao-como">Agora que entendemos o POR QUE, vamos ao COMO</h1><h1 id="continuous-releases-integration-delivery-deployment-">Continuous releases (integration, delivery, deployment)</h1><p>Geralmente segue uma abordagem de versionamento de código (por meio do Git) utilizando branches específicas para cada ambiente.</p><h1 id="continuous-integration">Continuous integration</h1><p>Execução automática dos testes unitários, integrados e também de qualidade de código na branch, para garantir que não houve quebra de funcionamento do pedaço modificado do código.</p><h1 id="continuous-delivery">Continuous delivery</h1><p>Empacotamento do software que está testado e aprovado, para deixar ele em algum lugar que seja possível fazer um deploy posteriormente. Exemplos são libs entregues em repositórios para ser integradas no código durante o próximo update e deploy de código</p><h1 id="continuous-deployment">Continuous deployment</h1><p>Após conseguir completar todos os passos anteriores, é possível fazer deploy automatizado direto nos ambientes, quando o time estiver com mais confiança em relação às ferramentas que testam, assim como com a questão de assumir riscos e entender que existe a possibilidade de falhar em ambientes de teste, sem preocupações.</p><h1 id="configuration-e-ou-infrastructure-as-code">Configuration (e/ou Infrastructure) as code</h1><p>Para que seja possível testar o software com assertividade, e entender que ele irá transitar entre os ambientes sem mudar de comportamento, é de extrema importância que as configurações sejam também código. Isso permite que as configurações sejam também versionadas, acompanhando o código. Garantindo também uma uniformidade entre os ambientes, que possibilita:</p><ul><li>Redução nos custos de manutenção, tendo um ponto único para olhar e entender o funcionamento do sistema;</li><li>Facilidade para recriar a infraestrutura, caso seja necessário mover tudo para outro lugar, isso pode acontecer com poucas interações manuais;</li><li>Permite que haja code review da infraestrutura e das configurações, que por consequência traz uma cultura de colaboração no desenvolvimento, compartilhamento do conhecimento e aumenta a democratização da infra;</li><li>Documentação como código, ajudando novos membros do time a terem um warm up mais rápido.</li></ul><p>Esses pontos foram bem estressados pelo time da Heroku, e deram origem ao famoso paper: <a href="https://12factor.net/"><em>The Twelve-Factor App</em></a>. Uma leitura muito boa para a explicação dos benefícios sobre gerência de configuração.</p><h1 id="monitoramento-e-self-healing">Monitoramento e self-healing</h1><p>Ao fim de todo o processo de entrega, o software deverá estar sendo monitorado, para que não seja necessário esperar um report externo de falhas, garantindo que as ações sejam pró-ativas e não reativas.</p><p>Garantir que o monitoramento esteja maduro, também nos permite automatizar a parte de reação aos alertas, criando um sistema de <em>self-healing</em> em que ações (scripts) são executados para corrigir possíveis falhas conhecidas na infraestrutura. Permitindo assim que todos possam dormir tranquilamente de noite, sem ter que ficar preocupado com o plantão tocar e ter que ler documentação de madrugada. (Se você já teve experiência com isso, sabe com certeza o quanto é ruim).</p><p>Escalando assim apenas os casos que forem extremas exceções (erros não conhecidos/esperados) no processo para o plantonista atuar, garantindo uma maior saúde na operação.</p><h1 id="automa-o-de-processos">Automação de processos</h1><p>Todo o processo que estiver causando Muda é alvo de automação, para que as pessoas possam trabalhar com mais agilidade. Bons exemplos de processos que costumam ser automatizados são:</p><ul><li>Deployment;</li><li>Self-healing (resiliência do sistema em resposta às anomalias);</li><li>Renovação de Certificados;</li><li>Testes;</li><li>Monitoramento (com auto-discovery);</li><li>Governança de usuários;</li></ul><h1 id="devops-toolchain"><a href="https://en.wikipedia.org/wiki/DevOps_toolchain">DevOps toolchain</a></h1><p>Uma combinação de ferramentas para facilitar a manutenção e operação do sistema, seguindo o seguinte fluxo:</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://datenworks.github.io/content/images/2019/08/1--NLvCHXpMJS8Bff7Tiuw8g-1.png" class="kg-image"><figcaption>Ciclo de desenvolvimento com DevOps</figcaption></figure><!--kg-card-end: image--><p>Obs.: Qualquer semelhança com o PDCA é mera certeza.</p><ul><li><strong>Plan: </strong>Fase de planejamento do projeto, em que são coletados os feedbacks para levantamento de requisitos, e criação do backlog;</li><li><strong>Create: </strong>Criação de um entregável (para validar uma hipótese), como um MVP;</li><li><strong>Verify: </strong>Passar o entregável para a fase de testes;</li><li><strong>Package: </strong>Empacotar o entregável (build) para conseguir colocar ele em algum ambiente de testes;</li><li><strong>Release: </strong>Fazer o deployment do entregável empacotado;</li><li><strong>Configure: </strong>Realizar a configuração do entregável no ambiente de testes, tentando chegar o mais próximo possível do <a href="https://12factor.net/"><em>twelve-factor app</em>.</a></li><li><strong>Monitor: </strong>Após fazer o deployment no ambiente, acompanhar as métricas de negócio e infraestrutura, para garantir que está tudo funcionando conforme o esperado.</li></ul><h1 id="conclus-o">Conclusão</h1><p>Durante a implementação dessas técnicas é possível observar melhoras no processo de desenvolvimento, os ganhos mais notáveis são:</p><ul><li>Melhoria no engajamento do time;</li><li>Compartilhamento de conhecimento;</li><li>Redução de <em>bottlenecks</em>;</li><li>Mais tempo livre para realizar trabalho que realmente importa (agrega valor para a experiência do usuário ou gera impacto);</li><li>Maior confiança ao entregar software.</li></ul>
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg" alt="Matheus Cunha" />
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="/author/macunha/">Matheus Cunha</a></h4>
+            <p>Just a technology lover empowering business with high-tech computing to help innovation (:</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="/author/macunha/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2019/08/0-tFkmLAeZZFqPthiF.jpg 300w,
+                    /content/images/size/w600/2019/08/0-tFkmLAeZZFqPthiF.jpg 600w,
+                    /content/images/size/w1000/2019/08/0-tFkmLAeZZFqPthiF.jpg 1000w,
+                    /content/images/size/w2000/2019/08/0-tFkmLAeZZFqPthiF.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/content/images/size/w600/2019/08/0-tFkmLAeZZFqPthiF.jpg"
+            alt="Processamento inteligente de texto livre — Uma jornada sobre ganho de escala"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/processamento-inteligente-de-texto-livre-uma-jornada-sobre-ganho-de-escala/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Processamento inteligente de texto livre — Uma jornada sobre ganho de escala</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>Uma das proposições de valor da tecnologia Big Data é a capacidade de resolver problemas complexos do cotidiano que, em geral, exigiriam esforços tremendos (pessoas, processos, tecnologia) para proporcionar alguma chance de sucesso.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Alexandre Cardoso
+                    </div>
+
+                        <a href="/author/alexcard/" class="static-avatar">
+                            <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-rmfkn7m_MPvqJEjuEZGshA.jpeg" alt="Alexandre Cardoso" />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">6 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="/uma-nova-proposta-de-valor/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2019/08/0-Yo4CNNQ2B3fSOAKx.jpg 300w,
+                    /content/images/size/w600/2019/08/0-Yo4CNNQ2B3fSOAKx.jpg 600w,
+                    /content/images/size/w1000/2019/08/0-Yo4CNNQ2B3fSOAKx.jpg 1000w,
+                    /content/images/size/w2000/2019/08/0-Yo4CNNQ2B3fSOAKx.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/content/images/size/w600/2019/08/0-Yo4CNNQ2B3fSOAKx.jpg"
+            alt="Uma nova proposta de valor"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/uma-nova-proposta-de-valor/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Uma nova proposta de valor</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>E 2019 finalmente começou…O mercado de tecnologia se tornou um grande terreno de oportunidades e grandes desafios para os “mais corajosos”, pessoas ou instituições engajadas na busca pela transformação definitiva dos meios</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Alexandre Cardoso
+                    </div>
+
+                        <a href="/author/alexcard/" class="static-avatar">
+                            <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-rmfkn7m_MPvqJEjuEZGshA.jpeg" alt="Alexandre Cardoso" />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">3 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://datenworks.github.io">
+                <img src="/content/images/size/w30/2019/08/favicon.ico" alt="Datenworks icon" />
+            <span>Datenworks</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">DevOps: De onde vieram e para onde vão</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=DevOps%3A%20De%20onde%20vieram%20e%20para%20onde%20v%C3%A3o&amp;url=https://datenworks.github.io/devops-origins/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://datenworks.github.io/devops-origins/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://datenworks.github.io">Datenworks</a> &copy; 2019</section>
+                <nav class="site-footer-nav">
+                    <a href="https://datenworks.github.io">Latest Posts</a>
+                    <a href="https://www.facebook.com/datenworks" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/datenworks" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/built/jquery.fitvids.js?v=5316bd241e"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    
+
+</body>
+</html>
