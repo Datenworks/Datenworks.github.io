@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Quickstart: Como rodar Apache Spark no Kubernetes</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=d1fa183ed3" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/amp/" />
+    
+    <meta property="og:site_name" content="Datenworks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Quickstart: Como rodar Apache Spark no Kubernetes" />
+    <meta property="og:description" content="Kubernetes?
+Desde o seu lançamento em 2014 pela Google, o Kubernetes tem ganhado muita
+popularidade junto com o próprio Docker, e desde 2016 passou a ser o de facto
+Container orchestrator, sendo estabelecido como um padrão de mercado e ganhando
+versões gerenciadas em todas as major Clouds[1]
+[https://cloud.google.com/kubernetes-engine/] [2] [https://aws.amazon.com/eks/] 
+[3] [https://docs.microsoft.com/en-us/azure/aks/] (inclusive na Digital Ocean
+[https://www.digitalocean.com/products/kubernete" />
+    <meta property="og:url" content="https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/" />
+    <meta property="og:image" content="https://datenworks.github.io/content/images/2019/08/istock-cargo-ship.jpg" />
+    <meta property="article:published_time" content="2019-08-22T15:13:00.000Z" />
+    <meta property="article:modified_time" content="2019-08-22T15:21:18.000Z" />
+    <meta property="article:tag" content="DevOps" />
+    <meta property="article:tag" content="Big Data" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/datenworks" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Quickstart: Como rodar Apache Spark no Kubernetes" />
+    <meta name="twitter:description" content="Kubernetes?
+Desde o seu lançamento em 2014 pela Google, o Kubernetes tem ganhado muita
+popularidade junto com o próprio Docker, e desde 2016 passou a ser o de facto
+Container orchestrator, sendo estabelecido como um padrão de mercado e ganhando
+versões gerenciadas em todas as major Clouds[1]
+[https://cloud.google.com/kubernetes-engine/] [2] [https://aws.amazon.com/eks/] 
+[3] [https://docs.microsoft.com/en-us/azure/aks/] (inclusive na Digital Ocean
+[https://www.digitalocean.com/products/kubernete" />
+    <meta name="twitter:url" content="https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/" />
+    <meta name="twitter:image" content="https://datenworks.github.io/content/images/2019/08/istock-cargo-ship.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Matheus Cunha" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="DevOps, Big Data" />
+    <meta name="twitter:site" content="@datenworks" />
+    <meta property="og:image:width" content="1012" />
+    <meta property="og:image:height" content="675" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Datenworks",
+        "logo": "https://datenworks.github.io/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Cunha",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://datenworks.github.io/content/images/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg",
+            "width": 128,
+            "height": 128
+        },
+        "url": "https://datenworks.github.io/author/macunha/",
+        "sameAs": [
+            "https://macunha.me"
+        ]
+    },
+    "headline": "Quickstart: Como rodar Apache Spark no Kubernetes",
+    "url": "https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/",
+    "datePublished": "2019-08-22T15:13:00.000Z",
+    "dateModified": "2019-08-22T15:21:18.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://datenworks.github.io/content/images/2019/08/istock-cargo-ship.jpg",
+        "width": 1012,
+        "height": 675
+    },
+    "keywords": "DevOps, Big Data",
+    "description": "Kubernetes?\nDesde o seu lançamento em 2014 pela Google, o Kubernetes tem ganhado muita\npopularidade junto com o próprio Docker, e desde 2016 passou a ser o de facto\nContainer orchestrator, sendo estabelecido como um padrão de mercado e ganhando\nversões gerenciadas em todas as major Clouds[1]\n[https://cloud.google.com/kubernetes-engine/] [2] [https://aws.amazon.com/eks/] \n[3] [https://docs.microsoft.com/en-us/azure/aks/] (inclusive na Digital Ocean\n[https://www.digitalocean.com/products/kubernete",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://datenworks.github.io/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.28" />
+    <link rel="alternate" type="application/rss+xml" title="Datenworks" href="https://datenworks.github.io/rss/" />
+
+</head>
+<body class="post-template tag-devops tag-big-data">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="https://datenworks.github.io"><img src="/content/images/2019/08/logo_datenworks_uso_exclusivo_fundos_coloridos.png" alt="Datenworks" /></a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="https://datenworks.github.io/">Home</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/datenworks" title="Facebook" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/datenworks" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://datenworks.github.io/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-devops tag-big-data ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2019-08-22">22 Agosto 2019</time>
+                        <span class="date-divider">/</span> <a href="/tag/devops/">DevOps</a>
+                </section>
+                <h1 class="post-full-title">Quickstart: Como rodar Apache Spark no Kubernetes</h1>
+            </header>
+
+            <figure class="post-full-image">
+                <img
+                    srcset="/content/images/size/w300/2019/08/istock-cargo-ship.jpg 300w,
+                            /content/images/size/w600/2019/08/istock-cargo-ship.jpg 600w,
+                            /content/images/size/w1000/2019/08/istock-cargo-ship.jpg 1000w,
+                            /content/images/size/w2000/2019/08/istock-cargo-ship.jpg 2000w"
+                    sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px"
+                    src="/content/images/size/w2000/2019/08/istock-cargo-ship.jpg"
+                    alt="Quickstart: Como rodar Apache Spark no Kubernetes"
+                />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <h1 id="kubernetes">Kubernetes?</h1><p>Desde o seu lançamento em 2014 pela Google, o Kubernetes tem ganhado muita popularidade junto com o próprio Docker, e desde 2016 passou a ser o <em>de facto Container orchestrator</em>, sendo estabelecido como um padrão de mercado e ganhando versões gerenciadas em <strong>todas</strong> as <em>major Clouds</em><a href="https://cloud.google.com/kubernetes-engine/">[1]</a> <a href="https://aws.amazon.com/eks/">[2]</a> <a href="https://docs.microsoft.com/en-us/azure/aks/">[3]</a> (inclusive na <a href="https://www.digitalocean.com/products/kubernetes/">Digital Ocean</a> e <a href="https://www.alibabacloud.com/product/kubernetes">Alibaba</a>).<br>Toda essa popularidade tem atraído novas implementações e <em>use-cases</em> para o orquestrador, dentre eles a execução de <a href="https://kubernetes.io/docs/tutorials/stateful-application/"><em>Stateful applications</em></a> e inclusive a tentativa de rodar <a href="https://vitess.io/zh/docs/get-started/kubernetes/">bancos de dados em containers</a>. Qual seria a necessidade de orquestrar um banco de dados? Ótima pergunta, porém para outro dia, por hoje vamos focar na utilização do <a href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/design.md">Spark Operator</a>.<br>A ideia de executar nativamente no <a href="https://github.com/kubernetes/kubernetes/issues/34377">Kubernetes surgiu em 2016</a>, antes disso haviam alguns <em>jeitinhos</em> de fazer acontecer, por exemplo: <a href="https://kubernetes.io/blog/2016/03/using-spark-and-zeppelin-to-process-big-data-on-kubernetes/">com Apache Zeppelin</a> ou então, mais refinado ainda <a href="https://github.com/kubernetes/examples/tree/master/staging/spark">com um cluster</a> que usaria o <a href="http://spark.apache.org/docs/latest/spark-standalone.html">Spark Standalone mode</a>.<br>Porém, executar nativamente seria muito mais interessante, e portanto a ideia cresceu bastante e tomou forma, ela <a href="https://issues.apache.org/jira/browse/SPARK-18278">foi desenvolvida</a> e mergeada na versão <a href="https://spark.apache.org/releases/spark-release-2-3-0.html">2.3.0 do Spark</a> que foi lançada em <a href="https://spark.apache.org/news/index.html">Feveiro de 2018</a>.</p><h1 id="quais-os-benef-cios-de-executar-spark-no-kubernetes">Quais os benefícios de executar Spark no Kubernetes?</h1><p>Como atualmente as empresas estão buscando se <a href="https://www.cio.com/article/3211428/what-is-digital-transformation-a-necessary-disruption.html">reinventar por meio da tão falada transformação digital</a> para que possam ter competitividade, e principalmente, sobreviver diante de um mercado cada vez mais dinâmico, é comum ver abordagens que incluam Big Data, Inteligência Artificial e Cloud Computing<a href="https://www.zdnet.com/article/how-to-use-cloud-computing-and-big-data-to-support-digital-transformation/">[1]</a> <a href="https://digitalhealth.london/cloud-big-data-ai-lead-nhs-digital-transformation/">[2]</a> <a href="https://www.ibm.com/blogs/cloud-computing/2018/11/05/guiding-framework-digital-transformation-garage/">[3]</a>.<br>Dentre os benefícios de utilizar Cloud ao invés de On-premises podemos listar:</p><ul><li><a href="https://www.linkedin.com/pulse/cloud-vs-on-premises-hard-dollar-costs-greg-deckler">Custo</a>;</li><li>Elasticidade;</li><li>SLA;</li><li>Integridade.</li></ul><p>Uma comparação interessante, pode ser lida no <a href="https://databricks.com/blog/2017/05/31/top-5-reasons-for-choosing-s3-over-hdfs.html">blog da Databricks</a> que é a empresa <a href="https://www.washingtonpost.com/news/the-switch/wp/2016/06/09/this-is-where-the-real-action-in-artificial-intelligence-takes-place/">fundada pelos criadores do Apache Spark</a>.</p><p>Como nós vemos uma adoção de Cloud Computing generalizada (até por empresas que teriam condições de bancar o próprio hardware), que muitas vezes nessas implementações de Cloud não existem clusters de <a href="https://hadoop.apache.org/">Apache Hadoop</a> já que os times de Dados (BI/Data Science/Analytics) optam cada vez mais por utilizar ferramentas como <a href="https://cloud.google.com/bigquery/">Google BigQuery</a> ou <a href="https://aws.amazon.com/redshift/">AWS Redshift</a>, não faz sentido subir um Hadoop apenas para utilizar o <a href="https://hortonworks.com/apache/yarn/">YARN</a> para gerenciar os recursos.</p><p>Para entender melhor o design do Spark Operator, recomendo a leitura da documentação gerada pela equipe da <a href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/design.md#the-crd-controller">GCP no GitHub</a>.</p><h1 id="setup">Setup</h1><p>Agora que toda a palavra já foi passada, vamos meter a mão na massa para mostrar a coisa acontecendo. Para isso, vamos usar:</p><ul><li><a href="https://www.docker.com/">Docker</a> como motor de container no Kubernetes, e construção da imagem <a href="https://docs.docker.com/install/">(link para instalação)</a>;</li><li>Minikube <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">(link para instalação)</a> para facilitar o provisionamento do Kubernetes (sim, será uma execução local);</li><li>uma versão compilada do Apache Spark que seja maior do que a 2.3.0.</li></ul><h2 id="instala-o-do-spark">Instalação do Spark</h2><p>Para o Apache Spark, é possível tanto compilar o <a href="https://github.com/apache/spark">código fonte</a> que levará algumas boas horas, ou baixar uma versão compilada <a href="https://spark.apache.org/downloads.html">aqui</a> (recomendo). Após ter o Apache descompactado, vamos adicionar o caminho no PATH para facilitar a execução:</p><!--kg-card-begin: code--><pre><code class="language-shell">export PATH=${PATH}:/path/to/apache-spark-X.Y.Z/bin
+</code></pre><!--kg-card-end: code--><h2 id="cria-o-do-kubernetes-com-minikube">Criação do Kubernetes com Minikube</h2><p>Para interação com o Kubernetes que será executado em uma VM pelo <code>minikube</code> será necessário ter o <code>kubectl</code> instalado, que pode ser feito seguindo <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">esse link</a>.</p><p>Agora, para ter um cluster de Kubernetes vamos iniciar um <code>minikube</code> básico, com o propósito de rodar um dos exemplos que já vem no <a href="https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/SparkPi.scala">repositório do Spark chamado SparkPi</a> apenas para demonstrar:</p><!--kg-card-begin: code--><pre><code class="language-shell">minikube start
+</code></pre><!--kg-card-end: code--><h2 id="constru-o-da-imagem-base">Construção da imagem base</h2><p>Vamos utilizar o Docker daemon do Minikube para não depender de um registry externo (e só gerar lixo na VM), para isso, o minikube tem um wrapper, que facilita a nossa vida configurando o host:</p><!--kg-card-begin: code--><pre><code class="language-shell">eval $(minikube docker-env)
+</code></pre><!--kg-card-end: code--><p>Por último, precisamos de uma imagem base para rodar os jobs. Existe um <a href="https://github.com/apache/spark/blob/master/bin/docker-image-tool.sh">shell script no repositório do Spark</a> para ajudar com isso. Como o <code>PATH</code> está com os binários, o commando:</p><!--kg-card-begin: code--><pre><code class="language-shell">./bin/docker-image-tool.sh -m -t latest build 
+</code></pre><!--kg-card-end: code--><p><em>Obs.:</em> O parâmetro <code>-m</code> aqui indica que o build será para o minikube.</p><h1 id="fire-">FIRE!</h1><p>Para executar o SparkPi, vamos no modo fácil usando o mesmo comando que seria utilizado para um cluster Spark <a href="https://spark.apache.org/docs/latest/submitting-applications.html">spark-submit</a>. Porém, o Spark Operator dá suporte a definição de jobs no "idioma do Kubernetes" usando <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">CRD</a>, <a href="https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/tree/master/examples">aqui tem alguns exemplos</a>.</p><p>A versão que instalei do Apache Spark é 2.4.3, isso precisa ser passado no parâmetro:</p><!--kg-card-begin: code--><pre><code class="language-bash">spark-submit --master k8s://https://$(minikube ip):8443 \
+  --deploy-mode cluster \
+  --name spark-pi \
+  --class org.apache.spark.examples.SparkPi \
+  --conf spark.executor.instances=3 \
+  --executor-memory 512m \
+  --conf spark.kubernetes.container.image=spark:latest local:///opt/spark/examples/jars/spark-examples_2.11-2.4.3.jar
+</code></pre><!--kg-card-end: code--><p>O que entra de novo aqui é:</p><ul><li><code>--master</code>: Aceita como parâmetro um schema <code>k8s://</code> e então nós passamos o IP da API do Kubernetes, que está exposta pelo minikube <code>https://$(minikube ip):8443</code>;</li><li><code>--conf spark.kubernetes.container.image=</code>: Configuração para a imagem base que será executada no Kubernetes</li></ul><p>Com o output:</p><!--kg-card-begin: code--><pre><code>...
+19/08/22 11:59:09 INFO LoggingPodStatusWatcherImpl: State changed, new state:
+	 pod name: spark-pi-1566485909677-driver
+	 namespace: default
+	 labels: spark-app-selector -&gt; spark-20477e803e7648a59e9bcd37394f7f60, spark-role -&gt; driver
+	 pod uid: c789c4d2-27c4-45ce-ba10-539940cccb8d
+	 creation time: 2019-08-22T14:58:30Z
+	 service account name: default
+	 volumes: spark-local-dir-1, spark-conf-volume, default-token-tj7jn
+	 node name: minikube
+	 start time: 2019-08-22T14:58:30Z
+	 container images: spark:docker
+	 phase: Succeeded
+	 status: [ContainerStatus(containerID=docker://e044d944d2ebee2855cd2b993c62025d6406258ef247648a5902bf6ac09801cc, image=spark:docker, imageID=docker://sha256:86649110778a10aa5d6997d1e3d556b35454e9657978f3a87de32c21787ff82f, lastState=ContainerState(running=null, terminated=null, waiting=null, additionalProperties={}), name=spark-kubernetes-driver, ready=false, restartCount=0, state=ContainerState(running=null, terminated=ContainerStateTerminated(containerID=docker://e044d944d2ebee2855cd2b993c62025d6406258ef247648a5902bf6ac09801cc, exitCode=0, finishedAt=2019-08-22T14:59:08Z, message=null, reason=Completed, signal=null, startedAt=2019-08-22T14:58:32Z, additionalProperties={}), waiting=null, additionalProperties={}), additionalProperties={})]
+19/08/22 11:59:09 INFO LoggingPodStatusWatcherImpl: Container final statuses:
+
+
+	 Container name: spark-kubernetes-driver
+	 Container image: spark:docker
+	 Container state: Terminated
+	 Exit code: 0
+</code></pre><!--kg-card-end: code--><p>E para ver o resultado do job, e toda a execução podemos mandar um <code>kubectl logs</code> passando o nome do pod do driver como parâmetro:</p><!--kg-card-begin: code--><pre><code class="language-shell">kubectl logs spark-pi-1566485909677-driver
+</code></pre><!--kg-card-end: code--><p>Que traz o output (algumas entradas foram omitidas), parecido com:</p><!--kg-card-begin: code--><pre><code>...
+19/08/22 14:59:08 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 52 ms on 172.17.0.7 (executor 1) (2/2)
+19/08/22 14:59:08 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+19/08/22 14:59:08 INFO DAGScheduler: ResultStage 0 (reduce at SparkPi.scala:38) finished in 0.957 s
+19/08/22 14:59:08 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 1.040608 s
+Pi is roughly 3.138915694578473
+19/08/22 14:59:08 INFO SparkUI: Stopped Spark web UI at http://spark-pi-1566485909677-driver-svc.default.svc:4040
+19/08/22 14:59:08 INFO KubernetesClusterSchedulerBackend: Shutting down all executors
+19/08/22 14:59:08 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Asking each executor to shut down
+19/08/22 14:59:08 WARN ExecutorPodsWatchSnapshotSource: Kubernetes client has been closed (this is expected if the application is shutting down.)
+19/08/22 14:59:08 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+19/08/22 14:59:08 INFO MemoryStore: MemoryStore cleared
+19/08/22 14:59:08 INFO BlockManager: BlockManager stopped
+19/08/22 14:59:08 INFO BlockManagerMaster: BlockManagerMaster stopped
+19/08/22 14:59:08 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+19/08/22 14:59:08 INFO SparkContext: Successfully stopped SparkContext
+19/08/22 14:59:08 INFO ShutdownHookManager: Shutdown hook called
+19/08/22 14:59:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-aeadc6ba-36aa-4b7e-8c74-53aa48c3c9b2
+19/08/22 14:59:08 INFO ShutdownHookManager: Deleting directory /var/data/spark-084e8326-c8ce-4042-a2ed-75c1eb80414a/spark-ef8117bf-90d0-4a0d-9cab-f36a7bb18910
+</code></pre><!--kg-card-end: code--><p>O resultado aparece no stdout:</p><!--kg-card-begin: code--><pre><code>19/08/22 14:59:08 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:38, took 1.040608 s
+Pi is roughly 3.138915694578473
+</code></pre><!--kg-card-end: code--><h1 id="cleanup">Cleanup</h1><p>Para finalizar, vamos deletar a VM que o Minikube gera, para limpar o ambiente (a menos que você queira continuar brincando com ele):</p><!--kg-card-begin: code--><pre><code class="language-shell">minikube delete
+</code></pre><!--kg-card-end: code--><p>Espero ter dispertado bastante curiosidade e te apresentado uma nova possibilidade para seus workloads de Big Data. Caso tenha alguma dúvida ou sugestão, comenta aí que nós conversamos.</p>
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg" alt="Matheus Cunha" />
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="/author/macunha/">Matheus Cunha</a></h4>
+            <p>Just a technology lover empowering business with high-tech computing to help innovation (:</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="/author/macunha/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="/lean-infra-enxuta/">
+        <img class="post-card-image"
+            srcset="/content/images/size/w300/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 300w,
+                    /content/images/size/w600/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 600w,
+                    /content/images/size/w1000/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 1000w,
+                    /content/images/size/w2000/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="/content/images/size/w600/2019/08/patrick-lindenberg-1iVKwElWrPA-unsplash.jpg"
+            alt="LEAN: Desenvolvimento de infra enxuta"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="/lean-infra-enxuta/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">LEAN: Desenvolvimento de infra enxuta</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                <p>Dentro da engenharia de sistemas, é muito complicado fazer o planejamento do desenvolvimento de um produto, pois muitas vezes o desenvolvimento de software é muito mais arte do que ciência, e os projetos</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Matheus Cunha
+                    </div>
+
+                        <a href="/author/macunha/" class="static-avatar">
+                            <img class="author-profile-image" src="/content/images/size/w100/2019/08/1-WrHv1aI2yq1joT0BWSJBRg.jpeg" alt="Matheus Cunha" />
+                        </a>
+                </li>
+            </ul>
+
+            <span class="reading-time">7 min read</span>
+
+        </footer>
+
+    </div>
+
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://datenworks.github.io">
+                <img src="/content/images/size/w30/2019/08/favicon.ico" alt="Datenworks icon" />
+            <span>Datenworks</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Quickstart: Como rodar Apache Spark no Kubernetes</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Quickstart%3A%20Como%20rodar%20Apache%20Spark%20no%20Kubernetes&amp;url=https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://datenworks.github.io/quickstart-como-rodar-spark-no-kubernetes/"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://datenworks.github.io">Datenworks</a> &copy; 2019</section>
+                <nav class="site-footer-nav">
+                    <a href="https://datenworks.github.io">Latest Posts</a>
+                    <a href="https://www.facebook.com/datenworks" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/datenworks" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/built/jquery.fitvids.js?v=d1fa183ed3"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    
+
+</body>
+</html>
